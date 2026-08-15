@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+
+.venv/
+.tmp/
+.pip-cache/
+data/
+
+.streamlit/secrets.toml
+
+*.lnk
+*.log
+
+release_package/

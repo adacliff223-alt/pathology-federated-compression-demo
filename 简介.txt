@@ -1,0 +1,1 @@
+用 FedAvg 搭多医院联邦学习基线，再用 Top-K 稀疏和 SignSGD 量化压缩梯度通信，最后用 error feedback 残差补偿解决极端压缩导致的精度下降。
