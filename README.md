@@ -73,13 +73,13 @@ def sign_quantize(vector):
 
 ## 没有 GPU 怎么办
 
-可以跑。默认 `tiny` CNN 和合成 PCam-like patch 是专门为 CPU 准备的，600 张/医院、3 轮通常几十秒内能完成。没有 GPU 时不要直接上 `--model resnet18 --use-pcam --samples-per-hospital 5000`，那是后续 Colab 或实验室机器版本。
+默认 `tiny` CNN 和合成 PCam-like patch 是专门为 CPU 准备的，600 张/医院、3 轮通常几十秒内能完成。没有 GPU 时不要直接上 `--model resnet18 --use-pcam --samples-per-hospital 5000`，那是后续 Colab 或实验室机器版本。
 
 ## 怎么包装这个项目
 
 建议按下面顺序展示，而不是只打开网页：
 
-1. 先给老师看 `PROJECT_REPORT.md`：说明临床问题、方法、实验结果和局限。
+1. 看 `PROJECT_REPORT.md`：说明临床问题、方法、实验结果和局限。
 2. 再运行 `train_federated.py`：证明结果是可复现的，不只是静态页面。
 3. 打开 `summary.csv`：展示每种方法最终 AUC 和通信量。
 4. 最后打开 Streamlit 页面：作为可视化入口，而不是项目本体。
@@ -93,4 +93,4 @@ FedAvg 基线 -> Top-K 稀疏 -> SignSGD 量化 -> Error Feedback 残差补偿 -
 
 ## 展示话术
 
-冯老师，我基于病理 patch 数据搭建了一个模拟多医院联邦学习系统，比较了 FedAvg、Top-K 稀疏、SignSGD 量化和 error feedback 残差补偿。结果显示，在数据不出院的设定下，Top-K + SignSGD 能把梯度值载荷压缩到约 0.3%，error feedback 可用于缓解压缩带来的精度损失，这个方向可以服务 OmniPT 多中心协作里的通信优化问题。
+基于病理 patch 数据搭建了一个模拟多医院联邦学习系统，比较了 FedAvg、Top-K 稀疏、SignSGD 量化和 error feedback 残差补偿。结果显示，在数据不出院的设定下，Top-K + SignSGD 能把梯度值载荷压缩到约 0.3%，error feedback 可用于缓解压缩带来的精度损失，这个方向可以服务 OmniPT 多中心协作里的通信优化问题。
